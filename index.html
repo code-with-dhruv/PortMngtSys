@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Dashboard</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-cover bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d7');">
+  <header class="bg-gray-800 text-white py-4 px-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">My Portfolio</h1>
+    <div>
+      <a href="manage_portfolio.html" class="btn">Manage Portfolio</a>
+      <a href="settlement.html" class="btn ml-2">Settlement Details</a>
+    </div>
+  </header>
+
+  <section class="market-ticker overflow-hidden whitespace-nowrap py-2 bg-yellow-200 text-black font-medium text-sm">
+    <div class="ticker animate-scroll">
+      Market Today: 📈 SENSEX: +234 | 📉 NIFTY: -115 | 🪙 BTC: +3.4% | 💹 ETH: +2.1% | GOLD: ₹59340
+    </div>
+  </section>
+
+  <main class="grid grid-cols-3 gap-4 p-6">
+    <!-- Charts -->
+    <div class="col-span-2 bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Portfolio Performance</h2>
+      <canvas id="netWorthChart"></canvas>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4">Diversification</h2>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+    <!-- Insights Panel -->
+    <div class="col-span-3 grid grid-cols-3 gap-4 mt-4">
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-lg font-semibold">Insights</h3>
+        <p class="text-sm mt-2">Your portfolio grew 15% in the last quarter. Diversify more in bonds.</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-lg font-semibold">Reports</h3>
+        <button class="btn">View Detailed Report</button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-lg font-semibold">Settlement Account</h3>
+        <button onclick="window.location.href='settlement.html'" class="btn">View Account</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const netWorthChart = new Chart(document.getElementById('netWorthChart'), {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Net Worth',
+          data: [10000, 15000, 17000, 14000, 19000, 22000],
+          borderColor: '#4F46E5',
+          fill: false,
+        }]
+      }
+    });
+
+    const pieChart = new Chart(document.getElementById('pieChart'), {
+      type: 'pie',
+      data: {
+        labels: ['Stocks', 'Bonds', 'Cash', 'Real Estate'],
+        datasets: [{
+          data: [45, 25, 15, 15],
+          backgroundColor: ['#4F46E5', '#10B981', '#F59E0B', '#EF4444'],
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
+```

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Portfolio</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 p-6">
+  <h1 class="text-2xl font-bold mb-4">Manage Your Portfolio</h1>
+  <table class="table-auto w-full bg-white rounded-lg shadow mb-4">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="p-2">Asset</th>
+        <th class="p-2">Type</th>
+        <th class="p-2">Amount</th>
+        <th class="p-2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="p-2">Apple</td>
+        <td class="p-2">Stock</td>
+        <td class="p-2">$5000</td>
+        <td class="p-2"><button class="btn bg-red-500">Remove</button></td>
+      </tr>
+      <tr>
+        <td class="p-2">Bonds US</td>
+        <td class="p-2">Bond</td>
+        <td class="p-2">$2000</td>
+        <td class="p-2"><button class="btn bg-red-500">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form class="bg-white p-4 rounded shadow">
+    <h2 class="text-xl font-semibold mb-2">Add New Asset</h2>
+    <input class="input" type="text" placeholder="Asset Name">
+    <input class="input" type="text" placeholder="Type (Stock/Bond)">
+    <input class="input" type="number" placeholder="Amount">
+    <button class="btn mt-2">Add Asset</button>
+  </form>
+</body>
+</html>
+```
+
+---
